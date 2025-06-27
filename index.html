@@ -9,30 +9,30 @@
 <body>
 <div class="container my-5">
   <h2 class="text-center mb-4">Form Isian Masalah Karang Taruna</h2>
-  <form>
-  <form target="_blank" action="https://formsubmit.co/nuha.smith16@gmail.com" method="POST">
-   <div class="mb-3">
+  <form action="https://formsubmit.co/nuha.smith16@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <div class="mb-3">
       <label class="form-label">Nama Karang Taruna</label>
-      <input type="text" class="form-control" placeholder="Contoh: Karang Taruna Tunas Muda">
+      <input type="text" class="form-control" name="nama_karangtaruna" placeholder="Contoh: Karang Taruna Tunas Muda" required>
     </div>
     <div class="mb-3">
       <label class="form-label">Alamat Padukuhan</label>
-      <input type="text" class="form-control" placeholder="Contoh: Padukuhan Ngijo, Bangunharjo, Sewon, Bantul">
+      <input type="text" class="form-control" name="alamat_padukuhan" placeholder="Contoh: Padukuhan Ngijo, Bangunharjo, Sewon, Bantul" required>
     </div>
 
     <h5 class="mt-4">A. Identitas Pengisi</h5>
     <div class="mb-3">
       <label class="form-label">Nama Lengkap</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="nama" required>
     </div>
     <div class="row">
       <div class="col-md-6 mb-3">
         <label class="form-label">Umur</label>
-        <input type="number" class="form-control">
+        <input type="number" class="form-control" name="umur">
       </div>
       <div class="col-md-6 mb-3">
         <label class="form-label">Jenis Kelamin</label>
-        <select class="form-select">
+        <select class="form-select" name="jk">
           <option>Laki-laki</option>
           <option>Perempuan</option>
         </select>
@@ -40,7 +40,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Jabatan di Karang Taruna</label>
-      <select class="form-select">
+      <select class="form-select" name="jabatan">
         <option>Ketua</option>
         <option>Sekretaris</option>
         <option>Bendahara</option>
@@ -50,49 +50,49 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Kontak (Opsional)</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="kontak">
     </div>
 
     <h5 class="mt-4">B. Kategori Masalah</h5>
     <div class="mb-3">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Kurangnya partisipasi anggota</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Kurangnya partisipasi anggota"> <label class="form-check-label">Kurangnya partisipasi anggota</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Keterbatasan dana atau pendanaan kegiatan</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Keterbatasan dana atau pendanaan kegiatan"> <label class="form-check-label">Keterbatasan dana atau pendanaan kegiatan</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Tidak adanya program kerja yang jelas</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Tidak adanya program kerja yang jelas"> <label class="form-check-label">Tidak adanya program kerja yang jelas</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Fasilitas kegiatan tidak memadai</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Fasilitas kegiatan tidak memadai"> <label class="form-check-label">Fasilitas kegiatan tidak memadai</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Kurangnya pelatihan atau peningkatan kapasitas</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Kurangnya pelatihan atau peningkatan kapasitas"> <label class="form-check-label">Kurangnya pelatihan atau peningkatan kapasitas</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Minimnya dukungan dari pihak desa/kelurahan</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Minimnya dukungan dari pihak desa/kelurahan"> <label class="form-check-label">Minimnya dukungan dari pihak desa/kelurahan</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Konflik internal antar anggota</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Konflik internal antar anggota"> <label class="form-check-label">Konflik internal antar anggota</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Kurangnya komunikasi dan koordinasi</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Kurangnya komunikasi dan koordinasi"> <label class="form-check-label">Kurangnya komunikasi dan koordinasi</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox"> <label class="form-check-label">Kegiatan tidak berkelanjutan</label>
+        <input class="form-check-input" type="checkbox" name="masalah[]" value="Kegiatan tidak berkelanjutan"> <label class="form-check-label">Kegiatan tidak berkelanjutan</label>
       </div>
-      <input type="text" class="form-control mt-2" placeholder="Lainnya (sebutkan)">
+      <input type="text" class="form-control mt-2" name="masalah_lain" placeholder="Lainnya (sebutkan)">
     </div>
 
     <h5 class="mt-4">C. Uraian Masalah</h5>
     <div class="mb-3">
-      <textarea class="form-control" rows="4" placeholder="Jelaskan secara rinci masalah yang dihadapi..."></textarea>
+      <textarea class="form-control" rows="4" name="uraian" placeholder="Jelaskan secara rinci masalah yang dihadapi..."></textarea>
     </div>
 
     <h5 class="mt-4">D. Skala Urgensi Masalah</h5>
     <div class="mb-3">
-      <select class="form-select">
+      <select class="form-select" name="urgensi">
         <option value="1">1 - Tidak Mendesak</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -103,9 +103,12 @@
 
     <h5 class="mt-4">E. Usulan Solusi / Harapan</h5>
     <div class="mb-3">
-      <textarea class="form-control" rows="3" placeholder="Tuliskan solusi atau harapan Anda..."></textarea>
+      <textarea class="form-control" rows="3" name="solusi" placeholder="Tuliskan solusi atau harapan Anda..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+    <button type="submit" class="btn btn-primary">Kirim</button>
   </form>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
