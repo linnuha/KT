@@ -167,6 +167,17 @@
         <input type="text" class="form-control mt-3" name="masalah_lain" placeholder="Lainnya (sebutkan)">
       </div>
     </div>
+<script>
+  // Tambahkan id dan for secara otomatis jika belum ada
+  document.querySelectorAll('.form-check-input').forEach((input, index) => {
+    const label = input.nextElementSibling;
+    if (label && label.tagName === 'LABEL') {
+      const id = input.name.replace(/\[\]/g, '') + '-' + index;
+      input.id = id;
+      label.setAttribute('for', id);
+    }
+  });
+</script>
 
     <!-- Bagian C-H dibungkus form-section dan distandarisasi -->
     <div class="form-section">
@@ -321,6 +332,17 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Tambahkan id dan for secara otomatis jika belum ada
+  document.querySelectorAll('.form-check-input').forEach((input, index) => {
+    const label = input.nextElementSibling;
+    if (label && label.tagName === 'LABEL') {
+      const id = input.name.replace(/\[\]/g, '') + '-' + index;
+      input.id = id;
+      label.setAttribute('for', id);
+    }
+  });
+</script>
   <script>
     const sections = document.querySelectorAll('.form-section');
     const submitButtonContainer = document.getElementById('submitButtonContainer');
