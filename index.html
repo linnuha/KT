@@ -367,6 +367,13 @@
     const formData = new FormData(form);
 
     fetch("https://script.google.com/macros/s/AKfycbw6on0yQmN3uKdDFTpLDjLiyPxcxEC-0udmBSas6C6n9eFtx1BjxLnvNZXRgKBw26Nz/exec", {
+  method: "POST",
+  body: new FormData(document.getElementById("karangTarunaForm"))
+})
+.then(res => res.text())
+.then(text => console.log("RESPONSE:", text))
+.catch(err => console.error("FETCH ERROR:", err));
+    fetch("https://script.google.com/macros/s/AKfycbw6on0yQmN3uKdDFTpLDjLiyPxcxEC-0udmBSas6C6n9eFtx1BjxLnvNZXRgKBw26Nz/exec", {
       method: "POST",
       body: formData
     })
