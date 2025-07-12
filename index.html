@@ -343,55 +343,42 @@
     }
   });
 </script>
-  <script>
-    const sections = document.querySelectorAll('.form-section');
-    const submitButtonContainer = document.getElementById('submitButtonContainer');
-    let currentSection = 0;
+ <script>
+document.getElementById("karangTarunaForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-    function showSection(index) {
-      sections.forEach((section, i) => {
-        section.style.display = i === index ? 'block' : 'none';
-      });
-      submitButtonContainer.style.display = index === sections.length - 1 ? 'flex' : 'none';
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const data = new URLSearchParams();
+  for (const pair of formData.entries()) {
+    data.append(pair[0], pair[1]);
+  }
+
+  fetch("https://script.google.com/macros/s/AKfycbwnTZChe2TuTJImM2WXtXUGqesRW3m1QR7Ybx_MdwXY0hmCGVGyt7xpqh3yOOsRQVkF/exec", {
+    method: "POST",
+    body: data,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
     }
-
-    function navigate(direction) {
-      if (direction === -1 && currentSection > 0) {
-        currentSection--;
-      } else if (direction === 1 && currentSection < sections.length - 1) {
-        currentSection++;
-      }
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById("formAlert").classList.remove("d-none");
+      form.reset();
+      currentSection = 0;
       showSection(currentSection);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById("formAlert").scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert("❌ Gagal mengirim data.");
     }
-
-    showSection(currentSection);
-
-    document.getElementById("karangTarunaForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-
-      fetch("https://script.google.com/macros/s/AKfycbwnTZChe2TuTJImM2WXtXUGqesRW3m1QR7Ybx_MdwXY0hmCGVGyt7xpqh3yOOsRQVkF/exec", {
-        method: "POST",
-        body: formData
-      })
-      .then(res => {
-        if (res.ok) {
-          document.getElementById("formAlert").classList.remove("d-none");
-          form.reset();
-          currentSection = 0;
-          showSection(currentSection);
-          document.getElementById("formAlert").scrollIntoView({ behavior: 'smooth' });
-        } else {
-          alert("❌ Gagal mengirim data.");
-        }
-      })
-      .catch(err => {
-        alert("❌ Error: " + err.message);
-      });
-    });
-
+  })
+  .catch(err => {
+    alert("❌ Error: " + err.message);
+  });
+});
+</script>
+  <script>
     function previewJawaban() {
       const data = new FormData(document.getElementById("karangTarunaForm"));
       const grouped = {};
